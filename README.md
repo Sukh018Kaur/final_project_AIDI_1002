@@ -4,7 +4,7 @@
 
 number of potato images - 1485
 
-Categories in the dataset are:     ['Early_Blight', 'Late_Blight', 'Healthy']
+Categories in the dataset are:   Here we considered three types potato disesase.  ['Early_Blight', 'Late_Blight', 'Healthy']
 
 **Train Model**
 
@@ -16,29 +16,22 @@ To train the model, the following approach was used:
 - **Base Model Layers:** All layers set to non-trainable
 
 
-Lightweight Text CNN
-python singleADAM_LW_train.py
+**DenseNet: Efficient CNN for Image Classification**
 
 Lightweight TextCNN with Dual Optimizer
-Switches from Adam to SGD when a triggering condition is satisfied. python SWAT_LW_train.py
+Adusted number of epoches, Switches from soyabean images to potato images means changing file path and file size and explored transfer learning effects by running model with all base layer frozen.
 
-Optional arguments:
-python train.py --help
-
-Evaluate Model
+**Evaluate Model**
 
 To evaluate, run below command
 test_loss, test_acc = model.evaluate(test_generator, verbose=2)
 
-python eval.py --eval_train --checkpoint_dir="./runs/trained_model/checkpoints/"
 
-To use your own data, change the eval.py script to load your data.
+**Link to the paper**
 
-Test Model
-To prediction on new test data, make sure evaluate model is working , Then run below :
+For further details and methodology, please refer to the original research paper: [Soybean Disease Identification Using Original Field Images and Transfer Learning with Convolutional Neural Networks]
+(https://arxiv.org/pdf/2004.07922.pdf)
 
-Link to the paper
-For further details and methodology, please refer to the original research paper: [Soybean Disease Identification Using Original Field Images and Transfer Learning with Convolutional Neural Networks](https://arxiv.org/pdf/2004.07922.pdf)
+**References:**
 
-References :
 RoboCrop-CNN-WebApp GitHub Repository](https://github.com/nzb0054/RoboCrop-CNN-WebApp)
